@@ -1,6 +1,5 @@
 import os, json, discord
 
-handler.setFormatter(logging.Formatter('{asctime}:{levelname}:{name}:{message}', style='{'))
 import discord.ext.commands as commands
 
 class Main(commands.Bot):
