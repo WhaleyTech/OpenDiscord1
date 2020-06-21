@@ -1,4 +1,4 @@
-import os, json, discord, logging
+import os, json, discord
 
 import discord.ext.commands as commands
 
