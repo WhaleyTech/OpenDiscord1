@@ -1,12 +1,7 @@
 import discord
 import discord.ext.commands as commands
 
-#Need to put in another python file or switch up to json
-addme = ['addme', 'Shares a link that allows to join your own discord server']
-coinflip = ['coinflip', 'Flips a coin!']
-
-cogs = [addme, coinflip]
-#----------
+import utilities.HelpList as hl
 
 def setup(bot):
     bot.remove_command('help')
@@ -19,7 +14,7 @@ class Help(commands.Cog):
         self.info_title = 'All commands'
         self.info_msg = '▫ **command** [alias1, alias2, ...] - description\n\n'
 
-        for cog in cogs:
+        for cog in hl.cogs:
             aliases = ''
             if len(cog) is 3:
                 aliases += f' [{cog[2]}]'
