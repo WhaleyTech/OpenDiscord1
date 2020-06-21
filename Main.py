@@ -2,6 +2,7 @@ import os, json, discord, logging
 
 import discord.ext.commands as commands
 
+#if adding new commands, please refer to utilities/HelpList.py
 class Main(commands.Bot):
     
     def __init__(self):
