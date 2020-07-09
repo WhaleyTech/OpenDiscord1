@@ -1,7 +1,7 @@
 import random
 import discord
 import time
-
+import utilities.CoolList as cl
 import discord.ext.commands as commands
 
 """ random cool bot commands :) """
@@ -15,10 +15,22 @@ class Cool(commands.Cog):
         await ctx.send(f"You flipped a coin! **{random.choice(coin)}**")
 
     @commands.command()
-    async def roll(self, ctx):
+    async def rolldice(self, ctx):
         dice_min=1
         dice_max=6
         await ctx.send(f':game_die: You roll a die! **{random.randint(dice_min, dice_max)}**')     
+
+    @commands.command()
+    async def lowercase(self, ctx, *, message:str):
+        await ctx.send(message.lower())
+
+    @commands.command()
+    async def uppercase(self, ctx, *, message:str):
+        await ctx.send(message.upper())
+
+    @commands.command(aliases=["8ball", "eightball", "8", "ball"])
+    async def eight_ball(self, ctx):
+        await ctx.send("{} **{}**".format(random.choice(cl.eight_ball), ctx.author.name))
 
 
 def setup(bot):
