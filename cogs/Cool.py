@@ -16,9 +16,7 @@ class Cool(commands.Cog):
 
     @commands.command()
     async def rolldice(self, ctx):
-        dice_min=1
-        dice_max=6
-        await ctx.send(f':game_die: You roll a die! **{random.randint(dice_min, dice_max)}**')     
+        await ctx.send(f':game_die: You roll a die! **{random.randint(1, 6)}**')     
 
     @commands.command()
     async def lowercase(self, ctx, *, message:str):
