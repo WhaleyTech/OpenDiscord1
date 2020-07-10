@@ -26,6 +26,10 @@ class Cool(commands.Cog):
     async def uppercase(self, ctx, *, message:str):
         await ctx.send(message.upper())
 
+    @commands.command()
+    async def reverse(self, ctx, *, message:str):
+        await ctx.send(message[::-1])
+
     @commands.command(aliases=["8ball", "eightball", "8", "ball"])
     async def eight_ball(self, ctx):
         await ctx.send("{} **{}**".format(random.choice(cl.eight_ball), ctx.author.name))
