@@ -1,6 +1,7 @@
 import random
 import discord
 import time
+import requests
 import utilities.CoolList as cl
 import discord.ext.commands as commands
 
@@ -8,6 +9,10 @@ import discord.ext.commands as commands
 class Cool(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    @commands.command()
+    async def leetcode(self, ctx):
+        await ctx.send(requests.get('https://leetcode.com/problems/random-one-question/all').url)
 
     @commands.command()
     async def coinflip(self, ctx):
