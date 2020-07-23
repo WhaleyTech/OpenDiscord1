@@ -2,7 +2,7 @@ import random
 import discord
 import time
 import requests
-import utilities.CoolList as cl
+import utilities.lists as cl
 import discord.ext.commands as commands
 
 """ random cool bot commands :) """

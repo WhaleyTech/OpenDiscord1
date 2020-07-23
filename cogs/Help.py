@@ -1,7 +1,7 @@
 import discord
 import discord.ext.commands as commands
 
-import utilities.HelpList as hl
+import utilities.helplist as hl
 
 def setup(bot):
     bot.remove_command('help')
