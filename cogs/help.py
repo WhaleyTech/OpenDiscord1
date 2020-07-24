@@ -11,7 +11,7 @@ class Help(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.title = '_All commands_'
+        self.title = f'_{self.bot.config["name"]} Commands_'
         self.msg = ''
 
         for cog in hl.cogs:

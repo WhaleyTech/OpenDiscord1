@@ -1,7 +1,7 @@
 #'list' = ['command alias', 'description about the command']  --- add command list to 'cogs'
 
 info = ['info', 'Get some info about the bot']
-addme = ['addme, invite', 'Shares a link that allows Opendiscord1 to join your own discord server']
+addme = ['addme, invite', 'Shares a link that allows the bot to join your own discord server']
 commits = ['commits, commit', 'Shows the latest commit history pushed to github']
 leetcode = ['leetcode', 'Sends URL of random LeetCode problems']
 coinflip = ['coinflip', 'Flips a coin!']
