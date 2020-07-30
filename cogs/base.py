@@ -41,3 +41,11 @@ class Base(commands.Cog):
         embed.add_field(name='Version Used:', value='*_Python {}.{}_*'.format(sys.version_info.major, sys.version_info.minor), inline=True)
         embed.set_footer(text='Created with discord.py')
         await ctx.send(embed=embed)
+
+    @commands.command()
+    async def id(self, ctx, user:discord.User=None):
+        """returns command author's ID or a user's ID if specified"""
+        if user is None:
+            await ctx.send("Your ID is `{}`".format(ctx.author.id))
+        else:
+            await ctx.send("{}'s ID is `{}`".format(user.mention, user.id))
