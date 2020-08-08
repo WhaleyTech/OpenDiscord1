@@ -51,3 +51,43 @@ class Mod(commands.Cog):
                 color=0xE91E63
             )
             await ctx.send(embed=lim_embed)
+
+    @commands.command()
+    @commands.guild_only()
+    @commands.has_permissions(ban_members=True)
+    async def ban(self, ctx, user: discord.Member, *, reason="reason null"):
+        if ctx.author.id == user.id:
+            self_ban_embed = discord.Embed(
+                description='Kicking yourself is not permitted',
+                color=0xE91E63
+            )
+            await ctx.send(embed=self_ban_embed)
+        if ctx.author.top_role.id == user.top_role.id and ctx.author.id != ctx.guild.owner.id:
+            no_perms_embed = discord.Embed(
+                description='You are not permitted to use this command.',
+                color=0xE91E63
+            )  
+            await ctx.send(embed=no_perms_embed)
+        await ctx.guild.ban(user, reason=reason, delete_message_days=0)
+        ban_embed = discord.Embed(
+            description=f'**{user}** has successfully been banned.',
+            color=0xE91E63
+        )
+        await ctx.send(embed=ban_embed)
+
+    @commands.command()
+    @commands.guild_only()
+    @commands.has_permissions(ban_members=True)
+    async def unban(self, ctx, user: discord.User, *, reason="reason null"):
+        if ctx.author.id == user.id:
+            self_unban_embed = discord.Embed(
+                description='Unbanning yourself is not permitted',
+                color=0xE91E63
+            )
+            await ctx.send(embed=self_unban_embed)
+        await ctx.guild.unban(user, reason=reason)
+        unban_embed = discord.Embed(
+            description=f'**{user}** has successfully been unbanned.',
+            color=0xE91E63
+        )
+        await ctx.send(embed=unban_embed)

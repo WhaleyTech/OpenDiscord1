@@ -14,6 +14,6 @@ eightball = ["eightball, 8ball, 8, ball", "The magic eight ball! :crystal_ball:"
 markdown = ["markdown", "Help on how to use markdown within Discord"]
 codeblock = ["codeblock", "makes user text into a 'fix' style codeblock"]
 mock = ["mock", "YoU CaN't JuSt PuT tHiS mEmE oN eVeRyThInG"]
-admin = ["admin commands: purge, kick", "A list of administration commands"]
+admin = ["admin commands: purge, kick, ban, unban", "A list of administration commands"]
 
 cogs = [info, addme, commits, leetcode, id, coinflip, rolldice, uppercase, lowercase, reverse, eightball, markdown, codeblock, admin]
