@@ -29,8 +29,8 @@ class Base(commands.Cog):
     async def commits(self, ctx):
         """return latest commits"""
         commit = subprocess.check_output(['git', 'log', '--pretty=format:[`%h`](https://github.com/WhaleyTech/OpenDiscord1/commits) %s', '-n', '3']).decode('utf-8')
-        embed = discord.Embed(description='Check us out on GitHub (https://github.com/WhaleyTech/OpenDiscord1)')
-        embed.add_field(name='Commit History', value = commit, inline=False)
+        embed = discord.Embed(description='Check us out on [GitHub](https://github.com/WhaleyTech/OpenDiscord1)')
+        embed.add_field(name='Latest Commit History', value = commit, inline=False)
         await ctx.send(embed=embed)
 
     @commands.command()

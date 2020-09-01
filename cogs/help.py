@@ -38,6 +38,7 @@ class Help(commands.Cog):
 
     @commands.command()
     async def help1(self, ctx):
+        """info commands"""
         info_embed = discord.Embed(
             title = "_Help1 - Info Commands_",
             description = c_(n=hl.info_cmds, msg=self.msg),
@@ -50,7 +51,7 @@ class Help(commands.Cog):
     async def help2(self, ctx):
         """admin commands"""
         admin_embed = discord.Embed(
-            title = "_Help3 - Admin Commands_",
+            title = "_Help2 - Admin Commands_",
             description = c_(n=hl.admin_cmds, msg=self.msg),
             color = 0xE91E63,
         )
@@ -61,7 +62,7 @@ class Help(commands.Cog):
     async def help3(self, ctx):
         """random commands"""
         rand_embed = discord.Embed(
-            title = "_Help2 - Random Commands_",
+            title = "_Help3 - Random Commands_",
             description = c_(n=hl.rand_cmds, msg=self.msg),
             color = 0xE91E63,
         )

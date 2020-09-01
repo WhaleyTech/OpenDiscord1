@@ -20,7 +20,7 @@ ban = ["ban", "Bans a specified user"]
 unban = ["unban", "Unbans a specified user"]
 
 info_cmds = [info, addme, commits, id]
-rand_cmds = [info, addme, commits, leetcode, id, coinflip, 
+rand_cmds = [info, addme, commits, leetcode, coinflip, 
             rolldice, uppercase, lowercase, reverse, eightball, 
             markdown, codeblock]
 admin_cmds = [purge, kick, ban, unban]
