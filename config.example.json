@@ -1,5 +1,11 @@
 {
     "prefix": "PREFIX HERE",
     "token": "TOKEN HERE",
-    "name": "NAME HERE"
+    "name": "NAME HERE",
+    "cogs": [
+        "cogs.base",
+        "cogs.cool",
+        "cogs.help",
+        "cogs.mod"
+    ]
 }
