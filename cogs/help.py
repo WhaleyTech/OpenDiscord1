@@ -32,8 +32,6 @@ class Help(commands.Cog):
         embed.set_thumbnail(url="https://img.icons8.com/color/48/000000/python.png")
         embed.add_field(name="_Support_", value="If you have any issues with the bot, please go to our " + 
             "[Github Issues Page](https://github.com/WhaleyTech/OpenDiscord1/issues) and create a new issue")
-        embed.add_field(name="_Add to Discord_", value="This bot can be added to your very own server! " +
-        "[Click here to add it to yours]({})".format(discord.utils.oauth_url(self.bot.user.id)), inline=False)
         await ctx.send(embed=embed)
 
     @commands.command()

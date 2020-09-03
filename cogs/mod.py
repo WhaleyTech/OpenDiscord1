@@ -1,5 +1,6 @@
 import discord
 import discord.ext.commands as commands
+from utilities import perms
 
 def setup(bot):
     bot.add_cog(Mod(bot))
@@ -10,8 +11,9 @@ class Mod(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    @commands.has_permissions(kick_members=True)
+    @perms.kick_perms()
     async def kick(self, ctx, user: discord.Member, *, reason="reason null"):
+        """Kicks a specified user"""
         if ctx.author.id == user.id:
             self_kick_embed = discord.Embed(
                 description='Kicking yourself is not permitted',
@@ -33,8 +35,9 @@ class Mod(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    @commands.has_permissions(manage_messages=True)
+    @perms.mod_perms()
     async def purge(self, ctx, n: int):
+        """Deletes messages within the channel"""
         if n < 999:
             try:
                 await ctx.channel.purge(limit=n+1)
@@ -54,8 +57,9 @@ class Mod(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    @commands.has_permissions(ban_members=True)
+    @perms.ban_perms()
     async def ban(self, ctx, user: discord.Member, *, reason="reason null"):
+        """Bans a specified user"""
         if ctx.author.id == user.id:
             self_ban_embed = discord.Embed(
                 description='Kicking yourself is not permitted',
@@ -77,8 +81,9 @@ class Mod(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    @commands.has_permissions(ban_members=True)
+    @perms.ban_perms()
     async def unban(self, ctx, user: discord.User, *, reason="reason null"):
+        """Unbans a specified user"""
         if ctx.author.id == user.id:
             self_unban_embed = discord.Embed(
                 description='Unbanning yourself is not permitted',
