@@ -23,11 +23,12 @@ class Base(commands.Cog):
 
     @commands.command(aliases=['addme'])
     async def invite(self, ctx):
+        """Shares a link that allows the bot to join your own discord server"""
         await ctx.send(f"Use this link to invite {self.title} to your own discord server! {discord.utils.oauth_url(self.bot.user.id)}") #need oauth2 url
 
     @commands.command(aliases=['commit'])
     async def commits(self, ctx):
-        """return latest commits"""
+        """Shows the latest commit history pushed to github"""
         commit = subprocess.check_output(['git', 'log', '--pretty=format:[`%h`](https://github.com/WhaleyTech/OpenDiscord1/commits) %s', '-n', '3']).decode('utf-8')
         embed = discord.Embed(description='Check us out on [GitHub](https://github.com/WhaleyTech/OpenDiscord1)')
         embed.add_field(name='Latest Commit History', value = commit, inline=False)
@@ -35,6 +36,7 @@ class Base(commands.Cog):
 
     @commands.command()
     async def info(self, ctx):
+        """Get some info about the bot"""
         embed = discord.Embed(description="_{} - A USI collaborative Discord Bot._".format(self.title), color=0xE91E63)
         embed.set_thumbnail(url="https://img.icons8.com/color/48/000000/python.png")
         embed.set_author(name='Contributors | EvanBlaine WhaleyTech')

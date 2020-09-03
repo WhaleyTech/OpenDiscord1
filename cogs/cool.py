@@ -12,6 +12,7 @@ class Cool(commands.Cog):
 
     @commands.command()
     async def markdown(self, ctx):
+        """Help on how to use markdown within Discord"""
         desc = (
             "**Markdown Text** is a nice feature within discord! "
             "Discord supports simple text formatting that helps "
@@ -30,16 +31,18 @@ class Cool(commands.Cog):
 
     @commands.command()
     async def leetcode(self, ctx):
+        """Sends URL of random LeetCode problems"""
         await ctx.send(requests.get('https://leetcode.com/problems/random-one-question/all').url)
 
     @commands.command()
     async def coinflip(self, ctx):
+        """flips coin"""
         coin = ['Tails', 'Heads']
         await ctx.send(f"You flipped a coin! **{random.choice(coin)}**")
 
     @commands.command()
     async def codeblock(self, ctx, *, msg:str):
-        """makes user text into a 'fix' style codeblock"""
+        """Makes user text into a 'fix' style codeblock"""
         await ctx.send("```fix\n" + msg + "\n```")
 
     @commands.command()
@@ -52,22 +55,27 @@ class Cool(commands.Cog):
 
     @commands.command()
     async def rolldice(self, ctx):
+        """Roll a die!"""
         await ctx.send(f':game_die: You roll a die! **{random.randint(1, 6)}**')     
 
     @commands.command()
     async def lowercase(self, ctx, *, message:str):
+        """Makes your message lowercase"""
         await ctx.send(message.lower())
 
     @commands.command()
     async def uppercase(self, ctx, *, message:str):
+        """Makes the message uppercase"""
         await ctx.send(message.upper())
 
     @commands.command()
     async def reverse(self, ctx, *, message:str):
+        """!sdrow ruoy sesreveR"""
         await ctx.send(message[::-1])
 
     @commands.command(aliases=["8ball", "eightball", "8", "ball"])
     async def eight_ball(self, ctx):
+        """The magic eight ball!"""
         await ctx.send("{} **{}**".format(random.choice(cl.eight_ball), ctx.author.name))
 
 
