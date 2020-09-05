@@ -8,8 +8,8 @@ def setup(bot):
     bot.add_cog(Help(bot))
 
 def c_(n: list, msg: str):
+        aliases = ''
         for i in n:
-            aliases = ''
             if len(i) is 3:
                 aliases += f' [{i[2]}]'
             msg += f'- **_{i[0]}_**{aliases} - {i[1]}\n'
